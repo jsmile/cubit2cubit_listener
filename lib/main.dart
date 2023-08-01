@@ -90,7 +90,7 @@ class _MyHomePageState extends State<MyHomePage> {
               const SizedBox(height: 20.0),
               ElevatedButton(
                 child: const Text(
-                  'Increase Counter',
+                  'Change Counter',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 24.0,
