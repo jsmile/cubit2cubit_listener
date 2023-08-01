@@ -1,6 +1,6 @@
 # cubit2cubit_listener
 
-A new Flutter project.
+Flutter BlockListener for Cubit to Cubit project.
 
 ## Getting Started
 
