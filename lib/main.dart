@@ -29,10 +29,18 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatelessWidget {
+class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
   final String title;
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  // param으로 주고 받을 값 보관 --> Stateful Widget으로 변경
+  int incrementSize = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +48,7 @@ class MyHomePage extends StatelessWidget {
       backgroundColor: Colors.red,
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(title),
+        title: Text(widget.title),
       ),
       body: Center(
         child: Column(
