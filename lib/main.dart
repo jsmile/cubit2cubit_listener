@@ -53,8 +53,8 @@ class _MyHomePageState extends State<MyHomePage> {
         } else if (state.color == Colors.blue) {
           incrementSize = 100;
         } else if (state.color == Colors.black) {
-          context.read<CounterCubit>().changeCounter(incrementSize);
           incrementSize = -100;
+          context.read<CounterCubit>().changeCounter(incrementSize);
         }
       },
       child: Scaffold(
