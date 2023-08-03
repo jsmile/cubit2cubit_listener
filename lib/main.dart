@@ -39,8 +39,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  // param으로 주고 받을 값 보관 --> Stateful Widget으로 변경
-  int incrementSize = 1;
+  // 다른 cubit 과 연결 시 사용되는 param으로 주고 받을 값 보관 --> Stateful Widget으로 변경
+  int incrementSize = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -54,8 +54,9 @@ class _MyHomePageState extends State<MyHomePage> {
           incrementSize = 100;
         } else if (state.color == Colors.black) {
           incrementSize = -100;
-          context.read<CounterCubit>().changeCounter(incrementSize);
         }
+        // 다른 cubit 과 연결시켜 실행하는 메서드 호출
+        context.read<CounterCubit>().changeCounter(incrementSize);
       },
       child: Scaffold(
         backgroundColor: context.watch<ColorCubit>().state.color,
@@ -97,6 +98,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
                 onPressed: () {
+                  // 다른 cubit 과 연결된 param을 전달받아 실행하는 메서드 호출
                   context.read<CounterCubit>().changeCounter(incrementSize);
                 },
               ),

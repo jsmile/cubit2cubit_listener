@@ -2,7 +2,7 @@
 part of 'counter_cubit.dart';
 
 class CounterState extends Equatable {
-  final int counter;
+  final int counter; // 관리할 상태를 보관할 필드 선언
 
   const CounterState({
     required this.counter,

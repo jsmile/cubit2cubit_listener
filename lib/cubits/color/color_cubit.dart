@@ -7,6 +7,7 @@ part 'color_state.dart';
 class ColorCubit extends Cubit<ColorState> {
   ColorCubit() : super(ColorState.initial());
 
+  // 상태를 변화시키는(emit) 메서드 정의
   void changeColor() {
     if (state.color == Colors.red) {
       emit(state.copyWith(color: Colors.green));
